@@ -16,7 +16,7 @@ public class Eval {
     */
 	public String getVille(String codePostal) {
 		String ville = null;
-		Class.forName("com.mysql.jdbc.Driver");
+		Class.forName("com.mysql.cj.jdbc.Driver");
 		Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/codepost", "eleve", "eleve");
 		PreparedStatement prepStmt = conn.prepareStatement("SELECT * from villes where code_postal=?");
 		prepStmt.setString(1, codePostal);
